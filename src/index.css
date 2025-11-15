@@ -1,0 +1,73 @@
+body{
+    background-color: hsl(41, 100%, 50%);
+}
+button{
+    cursor: pointer;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 1.5s ease-in-out;
+}
+ul{
+    margin-top: 50px;
+}
+li{
+    font-size: 1.5em;
+    font-weight: bold;
+    color:hsl(0, 0%, 50%);
+    background-color:hsl(0, 0%, 90%);
+    border: 2px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+}
+.tdl{
+    font-family: Arial,sans-serif;
+    margin-top: 50px;
+    text-align: center;
+    display: block;
+}
+.tdl-heading{
+    font-size: 40px;
+    color: hsl(0, 0%, 10%);
+}
+.tdl-input{
+    padding: 20px;
+    border: 2px solid hsl(0, 0%, 50%);
+    border-radius: 25px;
+}
+.tdl-input[type="text"]{
+    font-size: 1.5em;
+}
+.tdl-add-button{
+    font-size: 1em;
+    background-color: hsl(131, 100%, 50%);
+    padding: 20px;
+    margin-left: 30px;
+}
+.tdl-add-button:hover{
+    background-color:  hsl(131, 100%, 40%);
+}
+.text{
+    flex: 1;
+}
+.tdl-delete-button{
+    background-color: hsl(0, 100%, 50%);
+    margin-left: 0.5em;
+}
+.tdl-delete-button:hover{
+    background-color: hsl(0, 100%, 40%);
+}
+.tdl-up-button,.tdl-down-button{
+    background-color: hsl(200, 100%, 30%);
+    margin-left: 0.5em;
+}
+.tdl-down-button:hover,.tdl-up-button:hover{
+    background-color: hsl(200, 100%, 20%);
+}
