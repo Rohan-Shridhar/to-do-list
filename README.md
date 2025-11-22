@@ -1,16 +1,32 @@
-# React + Vite
+# ✅ To-Do List Application 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ Overview
 
-Currently, two official plugins are available:
+This is a single-page **To-Do List** application built with **ReactJS** functional components. It provides a simple, session-based tool for managing tasks with a focus on core CRUD operations and reordering. The application features a **vibrant, high-contrast aesthetic**. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🔗 Live Application
 
-## React Compiler
+The To-Do List is deployed and available for immediate use here:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**[🚀 View Live Demo on Vercel](https://vercel.com/rohan-s-mirjankars-projects/to-do-list)**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎨 Design and Features
+
+The application is styled with a **vibrant orange background** and high-contrast black and green elements, as per your design reference.
+
+### Key Features
+* **Add Tasks:** Quickly add new items to the list.
+* **Delete Tasks:** Remove unwanted tasks individually.
+* **Task Reordering:** Easily change the priority of tasks using dedicated **Up/Down Arrow** buttons next to each item.
+* **Session-Based:** Task list is maintained only for the current browser session (no local storage persistence).
+
+---
+
+## 🔧 Tools Used
+
+* **ReactJS** (Functional Components)
+* **Hooks:** Primary reliance on the `useState` Hook for managing the dynamic task list array.
+* **JavaScript:** Logic for array manipulation (adding, deleting, and reordering task elements).
+* **CSS:** Used for implementing the vibrant, high-contrast visual design.
