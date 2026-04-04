@@ -1,73 +1,221 @@
-body{
-    background-color: hsl(41, 100%, 50%);
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap");
+
+:root {
+  --bg-color: #fafaf8;
+  --card-bg: #ffffff;
+  --accent-color: #ff8c00;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --border-color: #e5e5e0;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --button-success: #2ecc71;
+  --button-danger: #e74c3c;
+  --button-info: #3498db;
 }
-button{
-    cursor: pointer;
-    color: white;
-    font-size: 0.8em;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    transition: background-color 1.5s ease-in-out;
+
+body {
+  background-color: var(--bg-color);
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-ul{
-    margin-top: 50px;
+
+.tdl {
+  background: var(--card-bg);
+  max-width: 600px;
+  width: 90%;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
 }
-li{
-    font-size: 1.5em;
-    font-weight: bold;
-    color:hsl(0, 0%, 50%);
-    background-color:hsl(0, 0%, 90%);
-    border: 2px solid hsl(0, 0%, 80%);
-    border-radius: 10px;
-    width: auto;
-    height: auto;
-    margin-top: 20px;
-    padding: 10px;
-    align-items: center;
-    display: flex;
+
+.tdl-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
 }
-.tdl{
-    font-family: Arial,sans-serif;
-    margin-top: 50px;
-    text-align: center;
-    display: block;
+
+.tdl-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
 }
-.tdl-heading{
-    font-size: 40px;
-    color: hsl(0, 0%, 10%);
+
+.tdl-counter {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: -20px;
+  margin-bottom: 30px;
+  font-weight: 500;
 }
-.tdl-input{
-    padding: 20px;
-    border: 2px solid hsl(0, 0%, 50%);
-    border-radius: 25px;
+
+.tdl-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.tdl-input[type="text"]{
-    font-size: 1.5em;
+
+.tdl-input {
+  padding: 12px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  flex: 1;
+  max-width: 350px;
+  outline: none;
+  transition: border-color 0.3s;
+  font-family: "Inter", sans-serif;
 }
-.tdl-add-button{
-    font-size: 1em;
-    background-color: hsl(131, 100%, 50%);
-    padding: 20px;
-    margin-left: 30px;
+
+.tdl-input:focus {
+  border-color: var(--accent-color);
 }
-.tdl-add-button:hover{
-    background-color:  hsl(131, 100%, 40%);
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  transition: all 0.2s ease;
 }
-.text{
-    flex: 1;
+
+button:hover {
+  transform: scale(1.05);
 }
-.tdl-delete-button{
-    background-color: hsl(0, 100%, 50%);
-    margin-left: 0.5em;
+
+.tdl-add-button {
+  padding: 12px 25px;
+  margin-left: 10px;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
-.tdl-delete-button:hover{
-    background-color: hsl(0, 100%, 40%);
+
+.tdl-add-button:hover {
+  background-color: #e67e00;
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
 }
-.tdl-up-button,.tdl-down-button{
-    background-color: hsl(200, 100%, 30%);
-    margin-left: 0.5em;
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
 }
-.tdl-down-button:hover,.tdl-up-button:hover{
-    background-color: hsl(200, 100%, 20%);
+
+li {
+  background-color: #fcfcfc;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+li:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.tdl-empty-message {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 30px;
+  opacity: 0.7;
+}
+
+.text {
+  flex: 1;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.text.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  color: var(--text-secondary);
+}
+
+.tdl-delete-button {
+  background-color: transparent;
+  color: var(--button-danger);
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  order: -1;
+}
+
+.tdl-arrows {
+  display: flex;
+  gap: 5px;
+}
+
+.tdl-up-button,
+.tdl-down-button {
+  background-color: transparent;
+  font-size: 1.1rem;
+  padding: 5px 8px;
+  filter: grayscale(1);
+  opacity: 0.6;
+}
+
+.tdl-up-button:hover,
+.tdl-down-button:hover {
+  filter: grayscale(0);
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tdl-clear-button {
+  margin-top: 30px;
+  background-color: transparent;
+  color: var(--text-secondary);
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+  opacity: 0.6;
+}
+
+.tdl-clear-button:hover {
+  opacity: 1;
+  background-color: var(--border-color);
+  color: var(--text-primary);
 }
