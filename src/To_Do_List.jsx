@@ -48,7 +48,7 @@ function To_Do_List() {
 
     const remainingTasks = tasks.filter(t => !t.done).length;
 
-    return (
+    return (<>
         <div className="tdl">
             <h2 className="tdl-heading">TO DO LIST</h2>
             <p className="tdl-counter">
@@ -120,9 +120,9 @@ function To_Do_List() {
                     Clear All
                 </button>
             )}
-
-            {/* ✅ Footer Added */}
-            <footer style={{ textAlign: "center", marginTop: "20px" }}>
+        </div>
+        <div>
+            <footer style={{ textAlign: "center", marginTop: "30vh" }}>
                 <p>
                     Built with ⚛ by{" "}
                     <a href="https://github.com/Rohan-Shridhar" target="_blank">
@@ -130,8 +130,7 @@ function To_Do_List() {
                     </a>
                 </p>
             </footer>
-
-        </div>
+        </div></>
     );
 }
 
