@@ -1,13 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>to-do-list</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Ladder — Task Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <div class="brand-mark">✦</div>
+        <span class="brand-name">Study Ladder</span>
+        <button class="icon-button collapse-button" id="collapseBtn" aria-label="Collapse sidebar">‹‹</button>
+      </div>
+      <nav class="subject-nav" id="subjectNav" aria-label="Subjects"></nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="mobileMenuBtn" aria-label="Open sidebar">☰</button>
+        <div>
+          <p class="eyebrow">YOUR PERSONAL PLANNER</p>
+          <h1 id="pageTitle">General</h1>
+          <p class="subtitle"><span id="taskCount">0 tasks</span><span class="dot-separator">·</span><span id="doneCount">0 completed</span></p>
+        </div>
+        <button class="add-button" id="addTaskBtn"><span class="plus">＋</span><span>Add task</span></button>
+      </header>
+
+      <section class="workspace">
+        <div class="ladder-intro">
+          <div class="intro-line"></div>
+          <span>YOUR NEXT STEPS</span>
+          <div class="intro-line"></div>
+        </div>
+        <div class="swipe-hints">
+          <span class="hint hint-edit">← Swipe left to edit</span>
+          <span class="hint hint-done">Swipe right to complete →</span>
+        </div>
+        <div class="ladder" id="ladder">
+          <div class="ladder-steps" id="taskList"></div>
+        </div>
+        <div class="empty-state" id="emptyState">
+          <h3>Add a task and start building momentum.</h3>
+          <button class="secondary-button" id="emptyAddBtn">Create your first task</button>
+        </div>
+      </section>
+      <footer class="main-footer">Where there is a will, there is a way</footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <form class="task-modal" id="taskForm">
+      <button class="modal-close" type="button" id="closeModalBtn" aria-label="Close">×</button>
+      <p class="eyebrow" id="modalEyebrow">ADD A NEW STEP</p>
+      <h2 id="modalTitle">What’s the next task?</h2>
+      <label for="taskName">Task name</label>
+      <input id="taskName" name="taskName" type="text" maxlength="120" placeholder="e.g. Revise RPA Unit 2" required />
+      <label for="taskDeadline">Deadline <span class="optional">(optional)</span></label>
+      <input id="taskDeadline" name="taskDeadline" type="date" />
+      <div class="modal-actions">
+        <button class="secondary-button" type="button" id="cancelModalBtn">Cancel</button>
+        <button class="add-button" type="submit" id="saveTaskBtn">Add task</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-check">✓</span>
+    <span class="toast-message" id="toastMessage">Task completed</span>
+    <button class="undo-button" id="undoBtn">Undo</button>
+    <button class="toast-close" id="toastClose" aria-label="Dismiss notification">×</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
