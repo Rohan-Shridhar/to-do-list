@@ -1,32 +1,21 @@
-# ✅ To-Do List Application 
+# Study Ladder
 
-## ✨ Overview
+A responsive task planner made with plain HTML, CSS and JavaScript.
 
-This is a single-page **To-Do List** application built with **ReactJS** functional components. It provides a simple, session-based tool for managing tasks with a focus on core CRUD operations and reordering. The application features a **vibrant, high-contrast aesthetic**. 
+## Run it
+1. Download and extract the ZIP.
+2. Open `index.html` in a modern browser.
+3. Add tasks under any subject using **Add task**.
 
-### 🔗 Live Application
+No build tools or package installation required.
 
-The To-Do List is deployed and available for immediate use here:
+## Features
+- Nine subject tabs: General, AIN, CON, DEV, OOM, RPA, CC, BIS and MIP
+- Collapsible sidebar on desktop and slide-out navigation on mobile
+- Optional deadline dates and deadline-first sorting
+- Swipe right to complete; swipe left to edit
+- Undo toast after completing a task
+- Browser `localStorage` persistence
 
-**[🚀 View Live Demo on Vercel](https://vercel.com/rohan-s-mirjankars-projects/to-do-list)**
-
----
-
-## 🎨 Design and Features
-
-The application is styled with a **vibrant orange background** and high-contrast black and green elements, as per your design reference.
-
-### Key Features
-* **Add Tasks:** Quickly add new items to the list.
-* **Delete Tasks:** Remove unwanted tasks individually.
-* **Task Reordering:** Easily change the priority of tasks using dedicated **Up/Down Arrow** buttons next to each item.
-* **Session-Based:** Task list is maintained only for the current browser session (no local storage persistence).
-
----
-
-## 🔧 Tools Used
-
-* **ReactJS** (Functional Components)
-* **Hooks:** Primary reliance on the `useState` Hook for managing the dynamic task list array.
-* **JavaScript:** Logic for array manipulation (adding, deleting, and reordering task elements).
-* **CSS:** Used for implementing the vibrant, high-contrast visual design.
+## Notes
+Tasks are saved in the current browser on the current device. Clearing browser site data will remove them. This project is a front-end prototype and does not sync across devices.
